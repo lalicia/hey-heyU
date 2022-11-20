@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import Countdown from "../components/Countdown.js";
 
 //this is going to need props from SetupOptions - (minutes, repetitions?) image
-function Enabled({image}) {
+function Enabled({minutes, repetitions, image}) {
 
 
 
@@ -18,7 +18,7 @@ function Enabled({image}) {
             <div className="options-pg-contents">
                 <section>
                     <h1>Enabled Page</h1>
-                    <Countdown />
+                    <Countdown minutes={minutes}/>
                 </section>
                 
                 <div className="option-img"></div>

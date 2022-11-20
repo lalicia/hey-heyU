@@ -18,7 +18,7 @@ function Home() {
     //   setTimeout(() => navigate("/options-break"), 1000)
     // }
     if (e.target.value === "break" || e.target.value === "stretching" || e.target.value === "hydration") {
-      setTimeout(() => navigate("/setup-options"), 1000)
+      setTimeout(() => navigate("/nudges"), 1000)
     }
   }
   
