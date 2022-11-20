@@ -10,10 +10,11 @@ import {
   Route,
 } from "react-router-dom";
 
-import OptionsSlouch from "../src/pages/OptionsSlouch.js";
-import OptionsWater from "../src/pages/OptionsWater.js";
-import OptionsBreak from "../src/pages/OptionsBreak.js";
+// import OptionsSlouch from "../src/pages/OptionsSlouch.js";
+// import OptionsWater from "../src/pages/OptionsWater.js";
+// import OptionsBreak from "../src/pages/OptionsBreak.js";
 import Enabled from "../src/pages/Enabled.js";
+import SetupOptions from "../src/pages/SetupOptions.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,9 +22,10 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} /> 
-        <Route path="/options-slouch" element={<OptionsSlouch />} />
+        {/* <Route path="/options-slouch" element={<OptionsSlouch />} />
         <Route path="/options-water" element={<OptionsWater />} />
-        <Route path="/options-break" element={<OptionsBreak />} />
+        <Route path="/options-break" element={<OptionsBreak />} /> */}
+        <Route path="/setup-options" element={<SetupOptions />} />
         <Route path="/enabled" element={<Enabled />} />
       </Routes>
     </BrowserRouter>
