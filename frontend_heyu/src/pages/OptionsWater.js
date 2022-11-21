@@ -10,7 +10,7 @@ function OptionsWater() {
 
 
     return (
-        <SetupOptions image={water}/>
+        <SetupOptions image={water} title={"Hydration Nudges"}/>
     )
 }
 

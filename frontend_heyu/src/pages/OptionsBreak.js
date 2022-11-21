@@ -11,7 +11,7 @@ function OptionsBreak() {
 
 
     return (
-        <SetupOptions image={getBreak}/>
+        <SetupOptions image={getBreak} title={"Break Nudges"}/>
     )
 }
 

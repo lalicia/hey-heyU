@@ -5,7 +5,7 @@ import {useState} from "react";
 import Countdown from "../components/Countdown.js"; 
 
 //needs to HAND DOWN props to Enabled/Countdown - minutes, repetitions
-function SetupOptions({image}) {
+function SetupOptions({image, title}) {
     const [minutes, setMinutes] = useState(0);
     const [repetitions, setRepetitions] = useState(0);
     //const [image, setImage] = useState({});
@@ -28,7 +28,7 @@ function SetupOptions({image}) {
 
                 <div className="options-pg-contents">
                     <section>
-                        <h1>Options Page</h1>
+                        <h1>{title}</h1>
 
                         <button className="to-countdown-btn" onClick={onClick}>
                             That's great, let's go
