@@ -8,18 +8,18 @@ function Home() {
   //this function is passed to the dropdown so that whatever option is clicked, the value is used to determine which page to navigate to. There's a second-long timeout just to give a tiny delay for better UX
   function handleClick(e) {
     console.log(e.target.value);
-    // if (e.target.value === "hydration") {
-    //   setTimeout(() => navigate("/options-water"), 1000)
-    // }
-    // if (e.target.value === "stretching") {
-    //   setTimeout(() => navigate("/options-slouch"), 1000)
-    // }
-    // if (e.target.value === "break") {
-    //   setTimeout(() => navigate("/options-break"), 1000)
-    // }
-    if (e.target.value === "break" || e.target.value === "stretching" || e.target.value === "hydration") {
-      setTimeout(() => navigate("/nudges"), 1000)
+    if (e.target.value === "hydration") {
+      setTimeout(() => navigate("/nudges-water"), 1000)
     }
+    if (e.target.value === "stretching") {
+      setTimeout(() => navigate("/nudges-slouch"), 1000)
+    }
+    if (e.target.value === "break") {
+      setTimeout(() => navigate("/nudges-break"), 1000)
+    }
+    // if (e.target.value === "break" || e.target.value === "stretching" || e.target.value === "hydration") {
+    //   setTimeout(() => navigate("/nudges"), 1000)
+    // }
   }
   
   return (

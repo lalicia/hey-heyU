@@ -3,16 +3,16 @@ import {Link} from "react-router-dom";
 import {useState} from "react";
 
 import Countdown from "../components/Countdown.js"; 
-//import images HERE to hand as props
 
-//needs to HAND DOWN props to Enabled/Countdown - minutes, repetitions, image
-function SetupOptions() {
+//needs to HAND DOWN props to Enabled/Countdown - minutes, repetitions
+function SetupOptions({image}) {
     const [minutes, setMinutes] = useState(0);
     const [repetitions, setRepetitions] = useState(0);
-    const [image, setImage] = useState({});
+    //const [image, setImage] = useState({});
 
     const [start, setStart] = useState(false);
 
+    //to switch state so display goes from options to countdown timer
     function onClick() {
         setStart(true);
     };
@@ -35,7 +35,9 @@ function SetupOptions() {
                         </button>
                     </section>
                 
-                    <div className="option-img"></div>
+                    <div className="option-img">
+                        <img src={image} alt="icon for nudge type"></img>
+                    </div>
                 </div>
                 </>)
                 :
@@ -48,7 +50,9 @@ function SetupOptions() {
                         <h1>We're counting down for you</h1>
                         <Countdown minutes={minutes} setMinutes={setMinutes}/>
                     </div>
-                    <div className="option-img"></div>
+                    <div className="option-img">
+                    <img src={image} alt="icon for nudge type"></img>
+                    </div>
                 </>)}    
         </div>
     )

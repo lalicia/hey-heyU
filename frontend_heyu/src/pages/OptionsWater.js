@@ -1,13 +1,16 @@
 import React from "react";
 
+import SetupOptions from "./SetupOptions.js";
 
+//import images HERE to hand as props
+import water from "../assets/water.png";
 
 function OptionsWater() {
 
 
 
     return (
-        <h1>Water Page</h1>
+        <SetupOptions image={water}/>
     )
 }
 

@@ -1,23 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+import SetupOptions from "./SetupOptions.js";
+
+//import images HERE to hand as props
+import getBreak from "../assets/break.png";
 
 function OptionsBreak() {
 
 
 
     return (
-        <div className="water-pg">
-            <h2 className="back-home"><Link to="/">hey-heyU</Link></h2>
-            <div className="water-pg-contents">
-                <div className="water-choices">
-
-                </div>
-                <div className="water-img">
-
-                </div>
-            </div>
-        </div>
+        <SetupOptions image={getBreak}/>
     )
 }
 
