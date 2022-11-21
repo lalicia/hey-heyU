@@ -17,6 +17,13 @@ function SetupOptions({image, title}) {
         setStart(true);
     };
 
+    //to set minutes on input selection from radio buttons
+    function timeSelection(e) {
+        //console.log('this is the e.t.v: ', e.target.value);
+        setMinutes(Number(e.target.value));
+    }
+    console.log(minutes)
+
     return (
         <div className="options-pg">
 
@@ -29,6 +36,29 @@ function SetupOptions({image, title}) {
                 <div className="options-pg-contents">
                     <section>
                         <h1>{title}</h1>
+
+                        <form className="time-options">
+                            
+                            <label htmlFor="15">
+                                <input type="radio" id="15" name="time" value="15" onChange={timeSelection}/>
+                                15 minutes
+                            </label>
+                            
+                            <label htmlFor="30">
+                                <input type="radio" id="30" name="time" value="30" onChange={timeSelection}/>
+                                30 minutes  
+                            </label>
+                            
+                            <label htmlFor="45">
+                                <input type="radio" id="45" name="time" value="45" onChange={timeSelection}/>
+                                45 minutes
+                            </label>
+                            
+                            <label htmlFor="60">
+                                <input type="radio" id="60" name="time" value="60" onChange={timeSelection}/>
+                                60 minutes   
+                            </label>
+                        </form>
 
                         <button className="to-countdown-btn" onClick={onClick}>
                             That's great, let's go
