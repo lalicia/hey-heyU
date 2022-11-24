@@ -4,12 +4,12 @@ import {useState} from "react";
 
 import Countdown from "../components/Countdown.js"; 
 
-//needs to HAND DOWN props to Enabled/Countdown - minutes, repetitions
+//needs to HAND DOWN props to Countdown - minutes, repetitions
 function SetupOptions({image, title}) {
     const [minutes, setMinutes] = useState(0);
     const [repetitions, setRepetitions] = useState(0);
-    //const [image, setImage] = useState({});
 
+    //state to control whether Options or Countdown are shown
     const [start, setStart] = useState(false);
 
     //to switch state so display goes from options to countdown timer
@@ -22,7 +22,7 @@ function SetupOptions({image, title}) {
         //console.log('this is the e.t.v: ', e.target.value);
         setMinutes(Number(e.target.value));
     }
-    console.log(minutes)
+    //console.log(minutes)
 
     return (
         <div className="options-pg">
@@ -36,26 +36,26 @@ function SetupOptions({image, title}) {
                 <div className="options-pg-contents">
                     <section>
                         <h1>{title}</h1>
-
+                        
                         <form className="time-options">
-                            
+                            {/* temporarily changed all VALUES to 0 for testing in browser */}
                             <label htmlFor="15">
-                                <input type="radio" id="15" name="time" value="15" onChange={timeSelection}/>
+                                <input type="radio" id="15" name="time" value="0" onChange={timeSelection}/>
                                 15 minutes
                             </label>
                             
                             <label htmlFor="30">
-                                <input type="radio" id="30" name="time" value="30" onChange={timeSelection}/>
+                                <input type="radio" id="30" name="time" value="0" onChange={timeSelection}/>
                                 30 minutes  
                             </label>
                             
                             <label htmlFor="45">
-                                <input type="radio" id="45" name="time" value="45" onChange={timeSelection}/>
+                                <input type="radio" id="45" name="time" value="0" onChange={timeSelection}/>
                                 45 minutes
                             </label>
                             
                             <label htmlFor="60">
-                                <input type="radio" id="60" name="time" value="60" onChange={timeSelection}/>
+                                <input type="radio" id="60" name="time" value="0" onChange={timeSelection}/>
                                 60 minutes   
                             </label>
                         </form>
