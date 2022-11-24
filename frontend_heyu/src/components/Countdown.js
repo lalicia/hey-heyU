@@ -2,8 +2,10 @@ import React from "react";
 import {useState, useEffect} from "react";
 
 //this is going to need props from SetupOptions - minutes, repetitions, image
-function Countdown({minutes, setMinutes}) {
-    const [seconds, setSeconds] = useState(59);
+function Countdown({minutes, setMinutes, resetMins}) {
+    const [seconds, setSeconds] = useState(0);
+    //state for if button to start another nudge should show
+    const [button, setButton] = useState(false);
 
     useEffect(() => {
         let interval = setInterval(() => {
@@ -16,6 +18,7 @@ function Countdown({minutes, setMinutes}) {
                     setMinutes(minutes - 1);
                 } else if (minutes === 0) {
                     clearInterval(interval);
+                    setButton(true);
                 } else {
                     setMinutes(minutes);
                     setSeconds(59);
@@ -25,10 +28,18 @@ function Countdown({minutes, setMinutes}) {
                 setSeconds(seconds - 1);
             }
         }, 1000)
+        setButton(false);
     }, [seconds]);
 
+    //trigger by button click, resets the countdown for the nudge
+    //needs to be -1 on mins otherwise does not show correctly
+    function goAgain() {
+        setMinutes(resetMins - 1);
+        setSeconds(59);
+    }
+
     //to ensure timer display is in 00:00 format, else would get single digits
-    const timerMinutes = minutes < 10 ? `0${minutes - 1}` : minutes - 1;
+    const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
     const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
     return (
@@ -36,6 +47,12 @@ function Countdown({minutes, setMinutes}) {
             <div className="countdown">
                 {timerMinutes}:{timerSeconds}
             </div>
+
+            {button === true ? 
+            (<button onClick={goAgain}>Set another nudge?</button>)
+            :
+            (<></>)
+            }
         </div>
     )
 }
