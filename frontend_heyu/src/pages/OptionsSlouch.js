@@ -1,13 +1,16 @@
 import React from "react";
 
+import SetupOptions from "./SetupOptions.js";
 
+//import images HERE to hand as props
+import stretch from "../assets/stretch.png";
 
 function OptionsSlouch() {
 
 
 
     return (
-        <h1>Slouch Page</h1>
+        <SetupOptions image={stretch} title={"Stretch Nudges"}/>
     )
 }
 

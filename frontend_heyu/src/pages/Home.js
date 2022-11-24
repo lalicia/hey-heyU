@@ -9,37 +9,40 @@ function Home() {
   function handleClick(e) {
     console.log(e.target.value);
     if (e.target.value === "hydration") {
-      setTimeout(() => navigate("/options-water"), 1000)
+      setTimeout(() => navigate("/nudges-water"), 1000)
     }
     if (e.target.value === "stretching") {
-      setTimeout(() => navigate("/options-slouch"), 1000)
+      setTimeout(() => navigate("/nudges-slouch"), 1000)
     }
     if (e.target.value === "break") {
-      setTimeout(() => navigate("/options-break"), 1000)
+      setTimeout(() => navigate("/nudges-break"), 1000)
     }
+    // if (e.target.value === "break" || e.target.value === "stretching" || e.target.value === "hydration") {
+    //   setTimeout(() => navigate("/nudges"), 1000)
+    // }
   }
   
   return (
-    <main>
-      <div className="circle"></div>
+    <div className="home-pg">
+      <div className="home-img"></div>
       
       <section>
         <h1>hey - heyU</h1>
         <h3>
-          We all need some help remembering the basics - so choose what you'd
-          like to be reminded about, and then we can set some nudges for you
+          We all need some help remembering the basics - so choose what you'd like to be reminded about, and then we can set some nudges for you
         </h3>
+        
         {/* <label htmlFor="alarms"> Choose</label> */}
         <select name="alarms" onClick={handleClick}>
-          <option value="" defaultValue>
-            WHAT CAN WE NUDGE YOU FOR?
+          <option value="" defaultValue className="def-option">
+            What can we nudge you for?
           </option>
-          <option value="hydration" >Hydration</option>
-          <option value="stretching" >Stretching</option>
-          <option value="break" >Break</option>
+          <option value="hydration" className="option">Hydration</option>
+          <option value="stretching" className="option">Stretching</option>
+          <option value="break" className="option">Break</option>
         </select>
       </section>
-    </main>
+    </div>
   );
 }
 

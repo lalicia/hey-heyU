@@ -1,13 +1,29 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
+import Countdown from "../components/Countdown.js";
 
-
-function Enabled() {
+//this is going to need props from SetupOptions - (minutes, repetitions?) image
+function Enabled({minutes, repetitions, image}) {
 
 
 
     return (
-        <h1>Enabled Page</h1>
+        <div className="enabled-pg">
+
+            <h2 className="back-home">
+                <Link to="/">hey-heyU</Link>
+            </h2>
+
+            <div className="options-pg-contents">
+                <section>
+                    <h1>Enabled Page</h1>
+                    <Countdown minutes={minutes}/>
+                </section>
+                
+                <div className="option-img"></div>
+            </div>
+        </div>
     )
 }
 
