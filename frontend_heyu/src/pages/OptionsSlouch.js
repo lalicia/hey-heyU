@@ -10,7 +10,7 @@ function OptionsSlouch() {
 
 
     return (
-        <SetupOptions image={stretch} title={"Stretch Nudges"}/>
+        <SetupOptions image={stretch} title={"Stretch Nudges"} subject={"have a stretch"}/>
     )
 }
 

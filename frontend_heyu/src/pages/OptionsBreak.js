@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 import SetupOptions from "./SetupOptions.js";
 
@@ -11,7 +11,7 @@ function OptionsBreak() {
 
 
     return (
-        <SetupOptions image={getBreak} title={"Break Nudges"}/>
+        <SetupOptions image={getBreak} title={"Break Nudges"} subject={"take a break"}/>
     )
 }
 

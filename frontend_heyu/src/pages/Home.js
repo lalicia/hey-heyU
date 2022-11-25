@@ -8,6 +8,9 @@ function Home() {
   //this function is passed to the dropdown so that whatever option is clicked, the value is used to determine which page to navigate to. There's a second-long timeout just to give a tiny delay for better UX
   function handleClick(e) {
     console.log(e.target.value);
+    if (e.target.value === "posture") {
+      setTimeout(() => navigate("/nudges-posture"), 1000)
+    }
     if (e.target.value === "hydration") {
       setTimeout(() => navigate("/nudges-water"), 1000)
     }
@@ -37,6 +40,7 @@ function Home() {
           <option value="" defaultValue className="def-option">
             What can we nudge you for?
           </option>
+          <option value="posture" className="option">Posture</option>
           <option value="hydration" className="option">Hydration</option>
           <option value="stretching" className="option">Stretching</option>
           <option value="break" className="option">Break</option>
