@@ -1,6 +1,8 @@
 import React from "react";
 import {useState, useEffect} from "react";
 
+import Notification from "../components/Notification.js";
+
 //this is going to need props from SetupOptions - minutes, repetitions, image
 function Countdown({minutes, setMinutes, resetMins}) {
     const [seconds, setSeconds] = useState(0);
@@ -28,12 +30,13 @@ function Countdown({minutes, setMinutes, resetMins}) {
                 setSeconds(seconds - 1);
             }
         }, 1000)
-        setButton(false);
+        //setButton(false); now moved to goAgain function to stop notification being resent on click
     }, [seconds]);
 
     //trigger by button click, resets the countdown for the nudge
     //needs to be -1 on mins otherwise does not show correctly
     function goAgain() {
+        setButton(false);
         setMinutes(resetMins - 1);
         setSeconds(59);
     }
@@ -49,7 +52,10 @@ function Countdown({minutes, setMinutes, resetMins}) {
             </div>
 
             {button === true ? 
-            (<button onClick={goAgain}>Set another nudge?</button>)
+            (<>
+                <Notification />
+                <button onClick={goAgain}>Set another nudge?</button>
+            </>)
             :
             (<></>)
             }

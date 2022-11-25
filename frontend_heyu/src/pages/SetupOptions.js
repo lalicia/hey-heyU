@@ -4,6 +4,8 @@ import {useState} from "react";
 
 import Countdown from "../components/Countdown.js"; 
 
+import Notification from "../components/Notification.js";
+
 //needs to HAND DOWN props to Countdown - minutes, repetitions
 function SetupOptions({image, title, subject}) {
     //changed to 1 to avoid having 0 mins on start of counter
@@ -63,6 +65,8 @@ function SetupOptions({image, title, subject}) {
                                 60 minutes   
                             </label>
                         </form>
+
+                        {/* <Notification onClick={onClick} /> */}
 
                         <button className="to-countdown-btn" onClick={onClick}>
                             That's great, let's go

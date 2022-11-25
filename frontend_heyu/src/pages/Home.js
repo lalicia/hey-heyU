@@ -2,6 +2,8 @@ import React from "react";
 // import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 
+// import Notification from "../components/Notification.js";
+
 function Home() { 
   const navigate = useNavigate();
 
