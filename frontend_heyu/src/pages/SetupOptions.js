@@ -2,9 +2,10 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {useState} from "react";
 
-import Countdown from "../components/Countdown.js"; 
+//import Countdown from "../components/Countdown.js"; 
+import NewCountdown from "../components/NewCountdown.js"; 
 
-import Notification from "../components/Notification.js";
+//import Notification from "../components/Notification.js";
 import Modal from "../components/Modal.js";
 
 //needs to HAND DOWN props to Countdown - minutes, repetitions
@@ -90,7 +91,8 @@ function SetupOptions({image, title, subject}) {
                     
                     <div className="options-pg-contents">
                         <h1>When we nudge you, {subject}</h1>
-                        <Countdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/>
+                        {/* COMMENTED OUT TO WORK ON NEW VERSION, BUT THIS IS THE WORKING CODE<Countdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/> */}
+                        <NewCountdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/>
                     </div>
 
                     <div className="option-img">
