@@ -13,6 +13,7 @@ import {
 import OptionsSlouch from "../src/pages/OptionsSlouch.js";
 import OptionsWater from "../src/pages/OptionsWater.js";
 import OptionsBreak from "../src/pages/OptionsBreak.js";
+import OptionsPosture from "../src/pages/OptionsPosture.js";
 // import Enabled from "../src/pages/Enabled.js";
 // import SetupOptions from "../src/pages/SetupOptions.js";
 
@@ -25,6 +26,7 @@ root.render(
         <Route path="/nudges-slouch" element={<OptionsSlouch />} />
         <Route path="/nudges-water" element={<OptionsWater />} />
         <Route path="/nudges-break" element={<OptionsBreak />} />
+        <Route path="/nudges-posture" element={<OptionsPosture />} />
         {/* <Route path="/nudges" element={<SetupOptions />} /> */}
         {/* <Route path="/enabled" element={<Enabled />} /> */}
       </Routes>
