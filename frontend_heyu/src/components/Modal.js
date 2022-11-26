@@ -41,6 +41,15 @@ function Modal({setModal}) {
                 <button onClick={() => setModal(false)}>Done, back to the nudges</button>
             </div>
           
+            <div className="modal-disclaimer">
+                <p className="modal-disclaimer-text">
+                    <i>Please note that if your browser is set to block notifications, we may not have been able to ask permission. If you didn't get a request, you can update the setting manually in your browser.
+                    <br>
+                    </br>
+                    You can usually access this by right-clicking the icon in the address bar, directly preceeding the website address.
+                    </i>
+                </p>
+            </div>
         </div>
     </div>
     )
