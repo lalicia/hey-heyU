@@ -5,9 +5,12 @@ import {useState} from "react";
 import Countdown from "../components/Countdown.js"; 
 
 import Notification from "../components/Notification.js";
+import Modal from "../components/Modal.js";
 
 //needs to HAND DOWN props to Countdown - minutes, repetitions
 function SetupOptions({image, title, subject}) {
+    const [modal, setModal] = useState(true);
+
     //changed to 1 to avoid having 0 mins on start of counter
     const [minutes, setMinutes] = useState(1);
     //for starting another nudge from button after countdown ends
@@ -31,6 +34,7 @@ function SetupOptions({image, title, subject}) {
 
     return (
         <div className="options-pg">
+            {modal === true ? <Modal setModal={setModal}/> : <></>}
 
             {start === false ? 
             (<>

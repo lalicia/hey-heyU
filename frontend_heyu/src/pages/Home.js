@@ -27,29 +27,30 @@ function Home() {
     // }
   }
 
-  function permission() {
-    if (!("Notification" in window)) {
-      // Check if the browser supports notifications
-      alert("This browser does not support desktop notification");
-    } else if (Notification.permission === "granted") {
-      // Check whether notification permissions have already been granted;
-      // if so, create a notification
-      const notification = new Notification("Notifications are already allowed");
-      // …
-    } else if (Notification.permission !== "denied") {
-      // We need to ask the user for permission
-      Notification.requestPermission().then((permission) => {
-        // If the user accepts, let's create a notification
-        if (permission === "granted") {
-          const notification = new Notification("Thank you :)");
-          // …
-        }
-      });
-    }
+  // //this function checks/requests permission to send notifications - is called when button clicked
+  // function permission() {
+  //   if (!("Notification" in window)) {
+  //     // Check if the browser supports notifications
+  //     alert("This browser does not support desktop notification");
+  //   } else if (Notification.permission === "granted") {
+  //     // Check whether notification permissions have already been granted;
+  //     // if so, create a notification
+  //     const notification = new Notification("Notifications are already allowed");
+  //     // …
+  //   } else if (Notification.permission !== "denied") {
+  //     // We need to ask the user for permission
+  //     Notification.requestPermission().then((permission) => {
+  //       // If the user accepts, let's create a notification
+  //       if (permission === "granted") {
+  //         const notification = new Notification("Thank you :)");
+  //         // …
+  //       }
+  //     });
+  //   }
   
-    // At last, if the user has denied notifications, and you
-    // want to be respectful there is no need to bother them anymore.
-  }
+  //   // At last, if the user has denied notifications, and you
+  //   // want to be respectful there is no need to bother them anymore.
+  // }
   
   return (
     <div className="home-pg">
@@ -58,7 +59,7 @@ function Home() {
       
       <section>
         <h1>hey - heyU</h1>
-        <h3>In order fo us to send nudges, we need permission to send notifications - please click <button onClick={permission}>here</button> to allow permissions</h3>
+        {/* <h3>In order fo us to send nudges, we need permission to send notifications - please click <button onClick={permission}>here</button> to allow permissions</h3> */}
         <h3>
           We all need some help remembering the basics - so choose what you'd like to be reminded about, and then we can set some nudges for you
         </h3>
