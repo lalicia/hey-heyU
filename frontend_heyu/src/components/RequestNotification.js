@@ -1,21 +1,9 @@
 import React from "react";
-import {useState} from "react";
 import {Component} from "react";
 
 var notification;
 
 class SimpleNotification extends Component {
-  // button(props) {
-  //   super(props);
-  //   this.state = {
-  //     fakeButton: false
-  //   };
-  // }
-  // _button = () => () => {
-  //   const [fakeButton, setFakeButton] = useState(false);
-
-  //   return <div>{ fakeButton }</div>
-  // }
 
     //THIS is start of tested working code
     constructor() {
@@ -46,11 +34,8 @@ class SimpleNotification extends Component {
     }
 
   render() {
-      return (
-      <>
-        {this.showNotification()}
-      </>
-      )
+      return (this.componentDidMount())
+      
       
     // {fakeButton === true ? (<>{this.showNotification()}</>) : (<>{this.componentDidMount()}</>)}
         //THIS is the tested working code
