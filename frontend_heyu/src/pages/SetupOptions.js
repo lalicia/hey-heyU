@@ -37,12 +37,15 @@ function SetupOptions({image, title, subject}) {
 
             {start === false ? 
             (<>
-                <h2 className="back-home">
-                    <Link to="/">hey-heyU</Link>
-                </h2>
+                <div className="options-back-btn-container">
+                    <h2 className="back-home">
+                        <Link to="/">hey-heyU</Link>
+                    </h2>
+                </div>
+                
 
-                <div className="options-pg-contents">
-                    <section>
+                <div className="options-pg-container">
+                    <section className="options-pg-content">
                         <h1>{title}</h1>
                         
                         <form className="time-options">
@@ -50,22 +53,22 @@ function SetupOptions({image, title, subject}) {
                             {/* change VALUES to 0 for testing in browser */}
                             <label htmlFor="15">
                                 <input type="radio" id="15" name="time" value="1" onChange={timeSelection}/>
-                                15 minutes
+                                15minutes
                             </label>
                             
                             <label htmlFor="30">
                                 <input type="radio" id="30" name="time" value="2" onChange={timeSelection}/>
-                                30 minutes  
+                                30minutes  
                             </label>
                             
                             <label htmlFor="45">
                                 <input type="radio" id="45" name="time" value="3" onChange={timeSelection}/>
-                                45 minutes
+                                45minutes
                             </label>
                             
                             <label htmlFor="60">
                                 <input type="radio" id="60" name="time" value="4" onChange={timeSelection}/>
-                                60 minutes   
+                                60minutes   
                             </label>
                         </form>
 

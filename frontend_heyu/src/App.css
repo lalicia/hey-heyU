@@ -92,6 +92,7 @@ code {
 section {
   display: flex;
   flex-direction: column;
+  /* flex-wrap: nowrap; */
   width: 40%;
   /* background-color: red; */
   margin-right: 2rem;
@@ -104,6 +105,7 @@ h1 {
   margin: 1rem;
   text-align: center;
   color:#FFFBBD;
+  word-break:keep-all;
 }
 
 h3 {
@@ -251,4 +253,126 @@ select:focus {
 
 /**************************************end of Modal styles*/
 
-/*************************************Break styles*/
+/**************************************SetupOptions styles*/
+
+.options-back-btn-container {
+  position: relative;
+}
+
+.back-home {
+  font-family: virgil;
+  font-size: 2rem;
+  color: #9c9c9c;
+  /* background-color: red; */
+  width:fit-content;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: #1C1C1C;
+  text-shadow: 0px 1px 10px #FFFBBD, 0 0 5px #FFFBBD, 1px 1px 5px #9c9c9c;
+  margin-bottom: 2rem;
+}
+
+.back-home:hover {
+  color: #FFFBBD;
+  text-shadow: 0px 1px 10px #1C1C1C, 0 0 5px #FFFBBD, 1px 1px 5px #1C1C1C;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.options-pg-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  /* background-color: green; */
+  gap: 0;
+}
+
+.options-pg-content {
+  /* background-color: red; */
+  margin-left: 2rem;
+  margin-top: 10%;
+}
+
+.time-options {
+  display: flex;
+  flex-direction: column;
+  font-family: virgil;
+  color: #9c9c9c;
+  font-size: 1.3rem;
+  text-align: center;
+  align-items: center;
+  /* background-color: green; */
+}
+
+label {
+  margin-top: 1.5rem;
+  width:fit-content;
+}
+
+input {
+  margin-right: .4rem;
+  /* background-color: red; */
+}
+
+.to-countdown-btn {
+  background-color:#FFFBBD;
+  color:#0D0630;
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  font-family: virgil;
+  font-size: 1.5rem;
+  /* border:#0D0630; */
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 3px #9c9c9c;
+  margin-bottom: 2rem;
+}
+
+.to-countdown-btn:hover {
+  background-color:#0D0630;
+  color:#FFFBBD;
+  box-shadow: 0px 0px 5px 3px #9c9c9c;
+}
+
+.to-countdown-btn:active {
+  background-color:#FFFBBD;
+  color:#0D0630;
+  box-shadow: 0px 0px 5px 3px #9c9c9c;
+}
+
+input[type="radio"] {
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  /* display: inline-block; */
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  /* background-color only for content */
+  /* background-clip: content-box; */
+  border: 3px solid #9c9c9c;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+}
+
+/* appearance for checked radiobutton */
+input[type="radio"]:checked {
+  background-color: #1C1C1C;
+}
+
+.option-img {
+  margin-top: 10%;
+  margin-right: 2rem;
+  max-width: 40%;
+  /* background-color: red; */
+}
