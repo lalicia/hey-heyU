@@ -160,7 +160,7 @@ select:focus {
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: #150025;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -168,36 +168,85 @@ select:focus {
   z-index: 1; /*set z-indexs as back button was showing over modal background*/
 }
 
+/* .modal-container {
+  position: relative;
+  background-color: green;
+} */
+
 .modal-xbtn {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 0 .25rem 0;
+  /* display: flex;
+  justify-content: flex-end; */
+  /* background-color: red; */
+  /* width: fit-content; */
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
   z-index: 1;
+  font-family: virgil;
 }
 
 .modal-xbtn button {
-  background-color: transparent;
+  background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 3rem;
   cursor: pointer;
-  color: yellow;
-  text-shadow: 1px 1px 1px rgb(52, 180, 180), 0 0 25px orange, 0 0 5px orangered;
+  color: #9c9c9c;
+  text-shadow: 1px 1px 1px #FFFBBD, 0 0 25px #FFFBBD, 0 0 5px #1C1C1C;
   z-index: 1;
 }
 
-.modal-msg-text,
+.modal-msg {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.modal-msg-text {
+  color: #FFFBBD;
+  font-family: virgil;
+  margin: 1rem;
+}
+
 .modal-disclaimer-text {
-  color: white;
+  color: #9c9c9c;
+  font-family: virgil;
+  margin: 1rem;
 }
 
 .modal-msg button {
   background-color: transparent;
   border: none;
-  font-size: 1.5rem;
+  font-family: virgil;
+  font-size: 2rem;
+  font-weight: 900;
   cursor: pointer;
-  color: yellow;
-  text-shadow: 1px 1px 1px rgb(52, 180, 180), 0 0 25px orange, 0 0 5px orangered;
+  color: #FFFBBD;
+  text-shadow: 0px 1px 10px #1C1C1C, 0 0 5px #FFFBBD, 1px 1px 5px #1C1C1C;
   z-index: 1;
+  /* background-color: red; */
+}
+
+.modal-msg button:hover,
+.modal-xbtn button:hover {
+  color: #1C1C1C;
+  text-shadow: 0px 1px 10px #FFFBBD, 0 0 5px #FFFBBD, 1px 1px 5px #9c9c9c;
+}
+
+.modal-done-btn {
+  margin: 2rem;
+  font-size: 2rem;
+  width: fit-content;
+}
+
+.modal-disclaimer {
+  display: flex;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+  font-size: 1.3rem;
 }
 
 /**************************************end of Modal styles*/
