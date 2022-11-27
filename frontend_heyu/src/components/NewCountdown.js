@@ -10,10 +10,12 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
     const [button, setButton] = useState(false);
     //console.log('this is orig now ', now);
 
+    //gets the date and time via UTC, so can set accurate notifications based on calculation on this basis using now state
     let date = new Date();
     let rightNow = date.getTime();
     const [now, setNow] = useState(rightNow);
     
+    //useEffect for the countdown display
     useEffect(() => {
         let interval = setInterval(() => {
             //DON'T EVER REMOVE THIS CLEARINTERVAL
@@ -42,19 +44,19 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
 
         //this cleanup function is what makes the interval clear and essentially makes the timer 00:00 and notification come through, in sync
         return () => {
-            //THIS clearInterval cannot be removed
+            //THIS clearInterval CANNOT BE REMOVED
             clearInterval(interval);
         }
-
     }, [seconds]);
 
+    //dynamic number for setting the notification alert based on the nudge time the user chose - can't use minutes as that state is updated above
     let timeAdd = resetMins * 60000;
     //console.log('this is minutes ', resetMins);
     //console.log('this is timeAdd ', timeAdd);
 
+    //useEffect for setting minutes/seconds to zero - which ends the timer and triggers the button state, which in turn triggers notification
     useEffect(() => {
         function resets() {
-            // clearInterval(interval);
             setMinutes(0);
             setSeconds(0);
             // setNow(600000); this does work to change now, just unsure of whether required
@@ -62,11 +64,10 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
         }
 
         const myTimeout = setTimeout(resets, (now + timeAdd) - now);
-        //this cleanup function is what makes the interval clear and essentially makes the timer 00:00 and notification come through, in sync
+        //this cleanup function is what makes the timeout clear and stops it repeating
         return () => {
             clearTimeout(myTimeout);
         }
-
     }, [now]);
 
 
@@ -84,14 +85,6 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
         setNow(update);
     }
 
-    // useEffect(() => {
-    //     if (button === true) {
-    //         updateNow();
-    //         console.log('button useeffect ran')
-    //     }
-    // }, [button])
-   
-
     //to ensure timer display is in 00:00 format, else would get single digits
     const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
     const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
@@ -105,15 +98,18 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
             {button === true ? 
             (<>
                 <Notification />
-                <button onClick={goAgain}>Set another nudge</button>
-                <button><Link to="/">I'm ok for now, thanks</Link></button>
+                <div className="go-again-btns">
+                    <button onClick={goAgain}>Set another nudge</button>
+                    <button>
+                        <Link to="/">I'm ok for now, thanks</Link>
+                    </button>
+                </div>
             </>)
             :
             (<></>)
             }
         </div>
     )
-
 }
 
 export default NewCountdown;
