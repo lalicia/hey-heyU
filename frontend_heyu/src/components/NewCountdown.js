@@ -34,10 +34,10 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
             } else {
                 setSeconds(seconds - 1);
             }
-            console.log('interval ran');
+            //console.log('interval ran');
         }, 1000)
 
-        console.log('this is now ', now);
+        //console.log('this is now ', now);
 
         //this cleanup function is what makes the interval clear and essentially makes the timer 00:00 and notification come through, in sync
         return () => {
@@ -47,6 +47,10 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
 
     }, [seconds]);
 
+    let timeAdd = resetMins * 60000;
+    //console.log('this is minutes ', resetMins);
+    //console.log('this is timeAdd ', timeAdd);
+
     useEffect(() => {
         function resets() {
             // clearInterval(interval);
@@ -55,7 +59,8 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
             // setNow(600000); this does work to change now, just unsure of whether required
             console.log('timeout ran')
         }
-        const myTimeout = setTimeout(resets, (now + 60000) - now);
+
+        const myTimeout = setTimeout(resets, (now + timeAdd) - now);
         //this cleanup function is what makes the interval clear and essentially makes the timer 00:00 and notification come through, in sync
         return () => {
             clearTimeout(myTimeout);
