@@ -2,7 +2,7 @@ import React from "react";
 // import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 
-//import RequestNotification from "../components/RequestNotification.js";
+import timerlight2color from "../assets/timerlight2color.png";
 
 function Home() { 
   const navigate = useNavigate();
@@ -26,47 +26,26 @@ function Home() {
     //   setTimeout(() => navigate("/nudges"), 1000)
     // }
   }
-
-  // //this function checks/requests permission to send notifications - is called when button clicked
-  // function permission() {
-  //   if (!("Notification" in window)) {
-  //     // Check if the browser supports notifications
-  //     alert("This browser does not support desktop notification");
-  //   } else if (Notification.permission === "granted") {
-  //     // Check whether notification permissions have already been granted;
-  //     // if so, create a notification
-  //     const notification = new Notification("Notifications are already allowed");
-  //     // …
-  //   } else if (Notification.permission !== "denied") {
-  //     // We need to ask the user for permission
-  //     Notification.requestPermission().then((permission) => {
-  //       // If the user accepts, let's create a notification
-  //       if (permission === "granted") {
-  //         const notification = new Notification("Thank you :)");
-  //         // …
-  //       }
-  //     });
-  //   }
-  
-  //   // At last, if the user has denied notifications, and you
-  //   // want to be respectful there is no need to bother them anymore.
-  // }
   
   return (
     <div className="home-pg">
       {/* <RequestNotification /> */}
-      <div className="home-img"></div>
+      <div className="home-img">
+        <img className="home-timer-img" src={timerlight2color} alt="a stopwatch"></img>  
+      </div>
       
       <section>
         <h1>hey - heyU</h1>
         {/* <h3>In order fo us to send nudges, we need permission to send notifications - please click <button onClick={permission}>here</button> to allow permissions</h3> */}
         <h3>
-          We all need some help remembering the basics - so choose what you'd like to be reminded about, and then we can set some nudges for you
+          We all need some help remembering the basics - so choose what you'd like to be reminded about, and then we can give you a nudge
         </h3>
         
         {/* <label htmlFor="alarms"> Choose</label> */}
+        {/*TRYING TO CHANGE COLOR ON HOVER - WORKED BUT NOT FOR DEFAULT OPTION
+        onFocus={(e) => e.target.size = 4} onBlur={(e) => e.target.size = 1} onChange={(e) => {e.target.size = 1; e.target.blur()}}*/}
         <select name="alarms" onClick={handleClick}>
-          <option value="" defaultValue className="def-option">
+          <option value="" defaultValue hidden className="def-option">
             What can we nudge you for?
           </option>
           <option value="posture" className="option">Posture</option>

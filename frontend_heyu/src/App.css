@@ -16,7 +16,7 @@
 */
 html, body {
   height: 100%;
-  background-color: lightslategray;
+  background-color: #0D0630;
 }
 /*
   Typographic tweaks!
@@ -85,14 +85,16 @@ code {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  gap: 6rem;
-  background-color: lightslategray;
+  gap: 2rem;
+  background-color: #0D0630;
 }
 
 section {
   display: flex;
   flex-direction: column;
   width: 40%;
+  /* background-color: red; */
+  margin-right: 2rem;
 }
 
 h1 {
@@ -101,6 +103,7 @@ h1 {
   /* width: 40%; */
   margin: 1rem;
   text-align: center;
+  color:#FFFBBD;
 }
 
 h3 {
@@ -108,30 +111,47 @@ h3 {
   font-family: virgil;
   font-size: 1.5rem;
   text-align: center;
+  color:#FFFBBD;
 }
 
-.home-img {
+/* .home-img {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background-color: #0d5c63;
-}
+  background-color: #FFFBBD;
+} */
 
 select {
   margin: 2rem;
   padding: .3rem;
   font-size: 1.2rem;
-  background-color: lightgray;
+  font-family: virgil;
+  background-color: #1C1C1C;
+  color: #9c9c9c;
+  border-color: #FFFBBD;
+  border-width: 3px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 3px #FFFBBD;
 }
 
-.def-option {
-  font-family: sans-serif; 
+select:focus {
+  outline: none;
 }
+
+/* .def-option {
+  font-family: virgil;
+} */
 
 .option {
   font-family: virgil;
+  color:#FFFBBD;
 }
 
+/*This did work but flex was making the div stretch when the dropdown clicked. If can fix that, this works along with the styles in the Home that are commented out 
+  option:hover, option:checked {
+  background-color:#261d54;
+  outline: none;
+} */
 /*************************************end of Home styles*/
 
 /*************************************ExhibitModal.js css*/
