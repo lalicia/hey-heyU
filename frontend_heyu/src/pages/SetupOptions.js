@@ -2,9 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {useState} from "react";
 
-import Countdown from "../components/Countdown.js"; 
+import NewCountdown from "../components/NewCountdown.js"; 
 
-import Notification from "../components/Notification.js";
 import Modal from "../components/Modal.js";
 
 //needs to HAND DOWN props to Countdown - minutes, repetitions
@@ -48,24 +47,24 @@ function SetupOptions({image, title, subject}) {
                         
                         <form className="time-options">
                             <h3>In how long would you like us to nudge you?</h3>
-                            {/* temporarily changed all VALUES to 0 for testing in browser */}
+                            {/* change VALUES to 0 for testing in browser */}
                             <label htmlFor="15">
                                 <input type="radio" id="15" name="time" value="1" onChange={timeSelection}/>
                                 15 minutes
                             </label>
                             
                             <label htmlFor="30">
-                                <input type="radio" id="30" name="time" value="0" onChange={timeSelection}/>
+                                <input type="radio" id="30" name="time" value="2" onChange={timeSelection}/>
                                 30 minutes  
                             </label>
                             
                             <label htmlFor="45">
-                                <input type="radio" id="45" name="time" value="0" onChange={timeSelection}/>
+                                <input type="radio" id="45" name="time" value="3" onChange={timeSelection}/>
                                 45 minutes
                             </label>
                             
                             <label htmlFor="60">
-                                <input type="radio" id="60" name="time" value="0" onChange={timeSelection}/>
+                                <input type="radio" id="60" name="time" value="4" onChange={timeSelection}/>
                                 60 minutes   
                             </label>
                         </form>
@@ -87,15 +86,20 @@ function SetupOptions({image, title, subject}) {
                     <h2 className="back-home">
                         <Link to="/">hey-heyU</Link>
                     </h2>
-                    
-                    <div className="options-pg-contents">
+ 
+                    <div className="option-title">
                         <h1>When we nudge you, {subject}</h1>
-                        <Countdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/>
                     </div>
 
                     <div className="option-img">
-                    <img src={image} alt="icon for nudge type"></img>
+                        <img src={image} alt="icon for nudge type"></img>
                     </div>
+
+                    <div className="option-countdown-display">
+                        {/* COMMENTED OUT TO WORK ON NEW VERSION, BUT THIS IS THE WORKING CODE - now permanently replaced but was initial working version <Countdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/> */}
+                        <NewCountdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/>
+                    </div>
+
                 </>)}    
         </div>
     )
