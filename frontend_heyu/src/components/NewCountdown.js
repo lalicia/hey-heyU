@@ -1,5 +1,6 @@
 import React from "react";
 import {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 
 import Notification from "../components/Notification.js";
 
@@ -104,7 +105,8 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
             {button === true ? 
             (<>
                 <Notification />
-                <button onClick={goAgain}>Set another nudge?</button>
+                <button onClick={goAgain}>Set another nudge</button>
+                <button><Link to="/">I'm ok for now, thanks</Link></button>
             </>)
             :
             (<></>)
