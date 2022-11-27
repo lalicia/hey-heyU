@@ -4,7 +4,7 @@ import React from "react";
 import SetupOptions from "./SetupOptions.js";
 
 //import images HERE to hand as props
-import getBreak from "../assets/break.png";
+import getBreak from "../assets/breaklight.png";
 
 function OptionsBreak() {
 

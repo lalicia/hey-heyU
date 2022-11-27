@@ -16,6 +16,7 @@
 */
 html, body {
   height: 100%;
+  background-color: lightslategray;
 }
 /*
   Typographic tweaks!
@@ -85,7 +86,7 @@ code {
   justify-content: center;
   align-items: center;
   gap: 6rem;
-  background-color: #fffcf7;
+  background-color: lightslategray;
 }
 
 section {

@@ -3,7 +3,7 @@ import React from "react";
 import SetupOptions from "./SetupOptions.js";
 
 //import images HERE to hand as props
-import water from "../assets/water.png";
+import water from "../assets/hydrationlight.png";
 
 function OptionsWater() {
 
