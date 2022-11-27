@@ -19,50 +19,58 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
             clearInterval(interval);
             //added in the else if to make the countdown stop when reaches 00:00
             if (seconds === 0) {
-                //CHANGED SECONDS FROM 59 to 10 FOR TESTING
                 //to handle going down in minutes and restarting seconds
                 if (minutes !== 0) {
-                    setSeconds(10);
+                    setSeconds(59);
                     setMinutes(minutes - 1);
                 } else if (minutes === 0) {
                     clearInterval(interval);
                     setButton(true);
                 } else {
                     setMinutes(minutes);
-                    setSeconds(10);
+                    setSeconds(59);
                 }
                 //then also just counting down seconds if they're not at zero
             } else {
                 setSeconds(seconds - 1);
             }
+            console.log('interval ran');
         }, 1000)
 
         console.log('this is now ', now);
-        
-        function resets() {
-            clearInterval(interval);
-            setMinutes(0);
-            setSeconds(0);
-            console.log('timeout ran')
-        }
-        setTimeout(() => resets(), (now + 10000) - now);
+
         //this cleanup function is what makes the interval clear and essentially makes the timer 00:00 and notification come through, in sync
         return () => {
+            //THIS clearInterval cannot be removed
             clearInterval(interval);
-            clearTimeout()
         }
 
-        //setButton(false); now moved to goAgain function to stop notification being resent on click
     }, [seconds]);
 
-    //THIS ISN'T WORKING - is zeroing out and sending notification immediately
+    useEffect(() => {
+        function resets() {
+            // clearInterval(interval);
+            setMinutes(0);
+            setSeconds(0);
+            // setNow(600000); this does work to change now, just unsure of whether required
+            console.log('timeout ran')
+        }
+        const myTimeout = setTimeout(resets, (now + 60000) - now);
+        //this cleanup function is what makes the interval clear and essentially makes the timer 00:00 and notification come through, in sync
+        return () => {
+            clearTimeout(myTimeout);
+        }
+
+    }, [now]);
+
+
      //trigger by button click, resets the countdown for the nudge
     //needs to be -1 on mins otherwise does not show correctly
     function goAgain() {
         updateNow();
         setButton(false);
         setMinutes(resetMins - 1);
-        setSeconds(10);
+        setSeconds(59);
     }
 
     function updateNow() {
@@ -70,11 +78,12 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
         setNow(update);
     }
 
-    useEffect(() => {
-        if (button === true) {
-            updateNow();
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (button === true) {
+    //         updateNow();
+    //         console.log('button useeffect ran')
+    //     }
+    // }, [button])
    
 
     //to ensure timer display is in 00:00 format, else would get single digits
