@@ -23,26 +23,18 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         let interval = setInterval(() => {
             //DON'T EVER REMOVE THIS CLEARINTERVAL
             clearInterval(interval);
-            //added in the else if to make the countdown stop when reaches 00:00
-            if (seconds === 0) {
+            if (seconds === 0 && minutes !== 0) {
                 //to handle going down in minutes and restarting seconds
-                if (minutes !== 0) {
-                    setSeconds(59);
-                    setMinutes(minutes - 1);
-                } else if (minutes === 0) {
+                setSeconds(59);
+                setMinutes(minutes - 1);
+            } else if (seconds === 0 && minutes === 0) {
                     clearInterval(interval);
                     setButton(true);
-                } else {
-                    setMinutes(minutes);
-                    setSeconds(59);
-                }
-                //then also just counting down seconds if they're not at zero
             } else {
                 setSeconds(seconds - 1);
             }
-            //console.log('interval ran');
+            console.log('interval ran');
         }, 1000)
-
         //console.log('this is now ', now);
 
         //this cleanup function is what makes the interval clear and essentially makes the timer 00:00 and notification come through, in sync
@@ -71,7 +63,7 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         const myTimeout = setTimeout(resets, (now + timeAdd) - now);
         //this cleanup function is what makes the timeout clear and stops it repeating
         return () => {
-            console.log(button);
+            console.log('button state =',button);
             clearTimeout(myTimeout);
         }
     }, [now]);
@@ -81,9 +73,9 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
     //needs to be -1 on mins otherwise does not show correctly
     function goAgain() {
         updateNow();
-        setButton(false);
         setMinutes(resetMins - 1);
         setSeconds(59);
+        setButton(false);
         // setShowTimer(true);
     }
 
