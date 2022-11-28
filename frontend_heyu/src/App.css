@@ -158,7 +158,7 @@ select:focus {
 } */
 /*************************************end of Home styles*/
 
-/*************************************ExhibitModal.js css*/
+/*************************************Modal styles*/
 .modalbg {
   width: 100vw;
   height: 100vh;
@@ -220,20 +220,23 @@ select:focus {
   margin: 1rem;
 }
 
-.modal-msg button {
+.modal-msg-text button {
   background-color: transparent;
   border: none;
   font-family: virgil;
   font-size: 2rem;
   font-weight: 900;
   cursor: pointer;
-  color: #FFFBBD;
-  text-shadow: 0px 1px 10px #1C1C1C, 0 0 5px #FFFBBD, 1px 1px 5px #1C1C1C;
+  text-shadow: 0px 1px 10px #FFFBBD, 0 0 5px #FFFBBD, 1px 1px 5px #9c9c9c;
   z-index: 1;
   /* background-color: red; */
 }
 
-.modal-msg button:hover,
+.modal-msg-text button:hover {
+  color: #FFFBBD;
+  text-shadow: 0px 1px 10px #1C1C1C, 0 0 5px #FFFBBD, 1px 1px 5px #1C1C1C;
+}
+
 .modal-xbtn button:hover {
   color: #1C1C1C;
   text-shadow: 0px 1px 10px #FFFBBD, 0 0 5px #FFFBBD, 1px 1px 5px #9c9c9c;
@@ -243,6 +246,29 @@ select:focus {
   margin: 2rem;
   font-size: 2rem;
   width: fit-content;
+  background-color:#FFFBBD;
+  color:#150025;
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  /* margin: 0 auto;
+  margin-top: 2rem; */
+  font-family: virgil;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 3px #9c9c9c;
+  border: 2px solid #150025;
+}
+
+.modal-done-btn:hover {
+  background-color:#150025;
+  color:#FFFBBD;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
+}
+
+.modal-done-btn:active {
+  background-color:#FFFBBD;
+  color:#150025;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
 }
 
 .modal-disclaimer {
