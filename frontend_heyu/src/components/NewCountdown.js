@@ -27,10 +27,16 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
                 //to handle going down in minutes and restarting seconds
                 setSeconds(59);
                 setMinutes(minutes - 1);
-            } else if (seconds === 0 && minutes === 0) {
+            } 
+            else if (seconds === 0 && minutes === 0) {
                     clearInterval(interval);
-                    setButton(true);
-            } else {
+                    console.log('this ci ran')
+                    // setButton(true);
+                    // console.log('this setButton ran')
+                    // setShowTimer(true);
+                    // console.log('this setShowTimer ran')
+            } 
+            else {
                 setSeconds(seconds - 1);
             }
             console.log('interval ran');
@@ -39,10 +45,10 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
 
         //this cleanup function is what makes the interval clear and essentially makes the timer 00:00 and notification come through, in sync
         return () => {
-            //THIS clearInterval CANNOT BE REMOVED
+            //THIS clearInterval CANNOT BE REMOVED, do not put anything else it will break
             clearInterval(interval);
         }
-    }, [seconds]);
+    }, [seconds, minutes]);
 
     //dynamic number for setting the notification alert based on the nudge time the user chose - can't use minutes as that state is updated above
     let timeAdd = resetMins * 60000;
@@ -54,9 +60,10 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
     //useEffect for setting minutes/seconds to zero - which ends the timer and triggers the button state, which in turn triggers notification
     useEffect(() => {
         function resets() {
-            setMinutes(0);
-            setSeconds(0);
+            // setMinutes(0);
+            // setSeconds(0);
             setButton(true);
+            setShowTimer(true);
             console.log('timeout ran');
         }
 
@@ -76,7 +83,7 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         setMinutes(resetMins - 1);
         setSeconds(59);
         setButton(false);
-        // setShowTimer(true);
+        setShowTimer(false);
     }
 
     function updateNow() {
@@ -85,10 +92,21 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
     }
 
     // useEffect for making timer disappear and resizing img
-    // useEffect(() => {
-    //     setTimeout(() => setShowTimer(false), 3000);
+    useEffect(() => {
+        setTimeout(() => setShowTimer(false), 3000);
     //     setTimeout(() => setImgBig(true), 3000);
-    // }, [])
+        console.log('setTimeout to disappear timer ran')
+    }, [])
+
+    useEffect(() => {
+        setTimeout(() => setMinutes(0), 10000);
+        console.log('setTimeout to zero minutes ran')
+    }, [now])
+    
+    useEffect(() => {
+        setTimeout(() => setSeconds(0), 10000);
+        console.log('setTimeout to zero seconds ran')
+    }, [now])
     
 
     //to ensure timer display is in 00:00 format, else would get single digits
