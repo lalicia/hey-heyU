@@ -32,6 +32,8 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
                 } else if (minutes === 0) {
                     clearInterval(interval);
                     setButton(true);
+                    setImgBig(false);
+                    setShowTimer(true);
                 } else {
                     setMinutes(minutes);
                     setSeconds(59);
@@ -57,13 +59,15 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
     //console.log('this is minutes ', resetMins);
     //console.log('this is timeAdd ', timeAdd);
 
+    //CUT BECAUSE SOMETHING IS BREAKING MY RESET NUDGE
+    // setImgBig(false);
+    // setShowTimer(true);
+
     //useEffect for setting minutes/seconds to zero - which ends the timer and triggers the button state, which in turn triggers notification
     useEffect(() => {
         function resets() {
             setMinutes(0);
             setSeconds(0);
-            setImgBig(false);
-            setShowTimer(true);
             // setNow(600000); this does work to change now, just unsure of whether required
             console.log('timeout ran')
         }
@@ -83,7 +87,7 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         setButton(false);
         setMinutes(resetMins - 1);
         setSeconds(59);
-        setShowTimer(true);
+        // setShowTimer(true);
     }
 
     function updateNow() {
@@ -91,11 +95,11 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         setNow(update);
     }
 
-    //useEffect for making timer disappear and resizing img
+    // useEffect for making timer disappear and resizing img
     useEffect(() => {
         setTimeout(() => setShowTimer(false), 3000);
         setTimeout(() => setImgBig(true), 3000);
-    }, [now])
+    }, [])
     
 
     //to ensure timer display is in 00:00 format, else would get single digits
