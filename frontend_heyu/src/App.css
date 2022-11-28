@@ -298,7 +298,7 @@ a {
 .options-pg-content {
   /* background-color: red; */
   margin-left: 2rem;
-  margin-top: 10%;
+  margin-top: 8%;
 }
 
 .time-options {
@@ -373,8 +373,72 @@ input[type="radio"]:checked {
 }
 
 .option-img {
-  margin-top: 10%;
+  margin-top: 8%;
   margin-right: 2rem;
   max-width: 40%;
   /* background-color: red; */
+}
+
+.option-title {
+  /* background-color: red; */
+  display: flex;
+  margin: 0 auto;
+  margin-top: 6%;
+  width: 90%;
+  justify-content: center;
+}
+
+/********************************end of SetupOptions styles*/
+
+/********************************NewCountdown styles*/
+/*CRITICAL to stop that annoying margin makes the page go longer thing*/
+.options-pg {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.countdown-img {
+  margin-top: 1rem;
+  align-self: center;
+  max-width: 10%;
+  transition: ease-in-out 3s;
+}
+
+.countdown-img-bigger {
+  margin-top: 1rem;
+  align-self: center;
+  max-width: 15%;
+  transition: ease-in-out 3s;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  /* color: #1C1C1C;
+  text-shadow: 0px 1px 5px #FFFBBD, 1px 1px 5px #FFFBBD, 1px 1px 15px #9c9c9c; */
+  color: #FFFBBD;
+  text-shadow: 5px 5px 5px #1C1C1C, 0 0 10px #9c9c9c, 1px 1px 5px #1c1c1c;
+  font-family: virgil;
+  font-weight: 900;
+  font-size: 4rem;
+  transition: ease-in-out 3s;
+}
+
+.countdown-invisible {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  color: #0D0630;
+  text-shadow: 5px 5px 5px #0D0630, 0 0 10px #0D0630, 1px 1px 5px #0D0630;
+  font-family: virgil;
+  font-weight: 900;
+  font-size: 2rem;
+  transition: ease-in-out 3s;
 }

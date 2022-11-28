@@ -18,6 +18,9 @@ function SetupOptions({image, title, subject}) {
     //state to control whether Options or Countdown are shown
     const [start, setStart] = useState(false);
 
+    //state to control size of image (operational when countdown is running)
+    const [imgBig, setImgBig] = useState(false);
+
     //to switch state so display goes from options to countdown timer
     function onClick() {
         setStart(true);
@@ -85,7 +88,7 @@ function SetupOptions({image, title, subject}) {
                 </div>
                 </>)
                 :
-                (<>
+                (<div className="countdown-pg-container">
                     <h2 className="back-home">
                         <Link to="/">hey-heyU</Link>
                     </h2>
@@ -94,16 +97,20 @@ function SetupOptions({image, title, subject}) {
                         <h1>When we nudge you, {subject}</h1>
                     </div>
 
-                    <div className="option-img">
-                        <img src={image} alt="icon for nudge type"></img>
-                    </div>
+                    <div className="countdown-container">
+                        {/*added toggle for class to allow img resize*/}
+                        <div className={imgBig ? "countdown-img-bigger" : "countdown-img"}>
+                            <img src={image} alt="icon for nudge type"></img>
+                        </div>
 
-                    <div className="option-countdown-display">
-                        {/* COMMENTED OUT TO WORK ON NEW VERSION, BUT THIS IS THE WORKING CODE - now permanently replaced but was initial working version <Countdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/> */}
-                        <NewCountdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/>
+                        <div className="option-countdown-display">
+                            {/* COMMENTED OUT TO WORK ON NEW VERSION, BUT THIS IS THE WORKING CODE - now permanently replaced but was initial working version <Countdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/> */}
+                            <NewCountdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins} imgBig={imgBig} setImgBig={setImgBig}/>
+                        </div>
                     </div>
+                    
 
-                </>)}    
+                </div>)}    
         </div>
     )
 }

@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 import Notification from "../components/Notification.js";
 
-function NewCountdown({minutes, setMinutes, resetMins}) {
+function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
     const [seconds, setSeconds] = useState(0);
     //state for if button to start another nudge should show
     const [button, setButton] = useState(false);
@@ -14,6 +14,9 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
     let date = new Date();
     let rightNow = date.getTime();
     const [now, setNow] = useState(rightNow);
+
+    //state for disappearing timer
+    const [showTimer, setShowTimer] = useState(true);
     
     //useEffect for the countdown display
     useEffect(() => {
@@ -59,6 +62,8 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
         function resets() {
             setMinutes(0);
             setSeconds(0);
+            setImgBig(false);
+            setShowTimer(true);
             // setNow(600000); this does work to change now, just unsure of whether required
             console.log('timeout ran')
         }
@@ -85,13 +90,20 @@ function NewCountdown({minutes, setMinutes, resetMins}) {
         setNow(update);
     }
 
+    //useEffect for making timer disappear and resizing img
+    useEffect(() => {
+        setTimeout(() => setShowTimer(false), 3000);
+        setTimeout(() => setImgBig(true), 3000);
+    }, [now])
+    
+
     //to ensure timer display is in 00:00 format, else would get single digits
     const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
     const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
     return (
         <div className="countdown-container">
-            <div className="countdown">
+            <div className={showTimer ? "countdown" : "countdown-invisible"}>
                 {timerMinutes}:{timerSeconds}
             </div>
 
