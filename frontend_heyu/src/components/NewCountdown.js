@@ -32,8 +32,6 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
                 } else if (minutes === 0) {
                     clearInterval(interval);
                     setButton(true);
-                    setImgBig(false);
-                    setShowTimer(true);
                 } else {
                     setMinutes(minutes);
                     setSeconds(59);
@@ -56,8 +54,6 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
 
     //dynamic number for setting the notification alert based on the nudge time the user chose - can't use minutes as that state is updated above
     let timeAdd = resetMins * 60000;
-    //console.log('this is minutes ', resetMins);
-    //console.log('this is timeAdd ', timeAdd);
 
     //CUT BECAUSE SOMETHING IS BREAKING MY RESET NUDGE
     // setImgBig(false);
@@ -68,13 +64,14 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         function resets() {
             setMinutes(0);
             setSeconds(0);
-            // setNow(600000); this does work to change now, just unsure of whether required
-            console.log('timeout ran')
+            setButton(true);
+            console.log('timeout ran');
         }
 
         const myTimeout = setTimeout(resets, (now + timeAdd) - now);
         //this cleanup function is what makes the timeout clear and stops it repeating
         return () => {
+            console.log(button);
             clearTimeout(myTimeout);
         }
     }, [now]);
@@ -96,10 +93,10 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
     }
 
     // useEffect for making timer disappear and resizing img
-    useEffect(() => {
-        setTimeout(() => setShowTimer(false), 3000);
-        setTimeout(() => setImgBig(true), 3000);
-    }, [])
+    // useEffect(() => {
+    //     setTimeout(() => setShowTimer(false), 3000);
+    //     setTimeout(() => setImgBig(true), 3000);
+    // }, [])
     
 
     //to ensure timer display is in 00:00 format, else would get single digits
