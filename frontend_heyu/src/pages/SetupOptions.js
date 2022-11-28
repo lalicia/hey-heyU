@@ -99,8 +99,10 @@ function SetupOptions({image, title, subject}) {
 
                     <div className="countdown-container">
                         {/*added toggle for class to allow img resize*/}
-                        <div className={imgBig ? "countdown-img-bigger" : "countdown-img"}>
-                            <img src={image} alt="icon for nudge type"></img>
+                        <div className="countdown-img"
+                        // {imgBig ? "countdown-img-bigger" : "countdown-img"}
+                        >
+                            <img className={imgBig ? "cdown-actual-img-bigger" : "cdown-actual-img"} src={image} alt="icon for nudge type"></img>
                         </div>
 
                         <div className="option-countdown-display">

@@ -83,6 +83,7 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         setButton(false);
         setMinutes(resetMins - 1);
         setSeconds(59);
+        setShowTimer(true);
     }
 
     function updateNow() {
@@ -111,9 +112,9 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
             (<>
                 <Notification />
                 <div className="go-again-btns">
-                    <button onClick={goAgain}>Set another nudge</button>
-                    <button>
-                        <Link to="/">I'm ok for now, thanks</Link>
+                    <button className="countdown-btns" onClick={goAgain}>Set another nudge</button>
+                    <button className="countdown-btns">
+                        <Link to="/">I'm ok for now</Link>
                     </button>
                 </div>
             </>)
