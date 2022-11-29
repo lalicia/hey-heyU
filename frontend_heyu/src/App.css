@@ -516,6 +516,95 @@ input[type="radio"]:checked {
 
 /********************************end of NewCountdown styles*/
 
+/********************************BabyModal styles*/
+
+.babymodal-container {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #300c4bdd;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /*set z-indexs as back button was showing over modal background*/
+}
+
+.babymodal-xbtn {
+  /* display: flex;
+  justify-content: flex-end; */
+  /* background-color: red; */
+  /* width: fit-content; */
+  position: absolute;
+  right: 1rem;
+  top: -.5rem;
+  z-index: 1;
+  font-family: virgil;
+}
+
+.babymodal-xbtn button {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #9c9c9c;
+  text-shadow: 0px 1px 1px #300c4b, 0 0 3px #300c4b, 0 0 5px #7c7c7c;
+  z-index: 1;
+}
+
+.babymodal-xbtn button:hover {
+  color: #1C1C1C;
+  text-shadow: 0px 1px 10px #9c9c9c, 0 0 5px #9c9c9c, 1px 1px 5px #7c7c7c;
+}
+
+.babymodal-disclaimer {
+  position: relative;
+  background-color:#1C1C1C;
+  color: #150025;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  padding: 3.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 20px 15px #9c9c9c, 0 0 10px #150025, 1px 1px 10px #9c9c9c;
+}
+
+.babymodal-disclaimer-text {
+  color: #FFFBBD;
+  font-family: virgil;
+  font-size: 1.1rem;
+}
+
+.babymodal-done-btn {
+  align-self: center;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  width: fit-content;
+  background-color:#FFFBBD;
+  color:#300c4b;
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  font-family: virgil;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 3px #9c9c9c;
+  border: 2px solid #300c4b;
+}
+
+.babymodal-done-btn:hover {
+  background-color:#300c4b;
+  color:#FFFBBD;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
+}
+
+.modal-done-btn:active {
+  background-color:#FFFBBD;
+  color:#150025;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
+}
+
+
 @media (max-width: 900px) {
   html {
     font-size: 14px;

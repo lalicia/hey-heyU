@@ -1,8 +1,10 @@
 import React from "react";
 import {useState} from "react";
 
+import BabyModal from "./BabyModal.js";
 
 function Modal({setModal}) {
+    const [babyModal, setBabyModal] = useState(false);
 
     //this function checks/requests permission to send notifications - is called when button clicked
     function permission() {
@@ -39,6 +41,8 @@ function Modal({setModal}) {
             </div>
 
         <div className="modal-container">
+            {babyModal === true ? <BabyModal setBabyModal={setBabyModal}/> : <></>}
+
             <div className="modal-msg">
                 <h3 className="modal-msg-text">In order for us to nudge you we need to send notifications - please click <button onClick={permission}>here</button> to set permissions</h3>
                 <button className="modal-done-btn" onClick={() => setModal(false)}>Done, back to the nudges</button>
@@ -46,11 +50,7 @@ function Modal({setModal}) {
           
             <div className="modal-disclaimer">
                 <p className="modal-disclaimer-text">
-                    <i>Please note - if your browser is set to block notifications, we may not have been able to ask permission.<br></br>If you didn't get a request (or a message that notifications are already allowed), you can update the setting manually in your browser.
-                    <br>
-                    </br>
-                    You can usually access this by right-clicking the icon in the address bar, directly preceeding the website address.
-                    </i>
+                    <i><button className="modal-to-babymodal-btn" onClick={() => setBabyModal(true)}>Er - nothing happened?</button></i>
                 </p>
             </div>
         </div>
