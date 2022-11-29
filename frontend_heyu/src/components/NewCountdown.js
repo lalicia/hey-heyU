@@ -25,7 +25,7 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
             clearInterval(interval);
 
             //this worked as if/else so leaving in place
-            if ((minutes === 0 && seconds === 52) || 
+            if ((minutes === 14 && seconds === 52) || 
                 (minutes === 29 && seconds === 52) || 
                 (minutes === 44 && seconds === 52) || 
                 (minutes === 59 && seconds === 52)) {
@@ -107,17 +107,17 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
     useEffect(() => {
         setTimeout(() => setShowTimer(false), 2000);
         setTimeout(() => setImgBig(true), 2000);
-        console.log('setTimeout to disappear timer ran')
+        // console.log('setTimeout to disappear timer ran')
     }, [])
 
     useEffect(() => {
         setTimeout(() => setMinutes(0), 12000);
-        console.log('setTimeout to zero minutes ran')
+        // console.log('setTimeout to zero minutes ran')
     }, [now])
     
     useEffect(() => {
         setTimeout(() => setSeconds(0), 12000);
-        console.log('setTimeout to zero seconds ran')
+        // console.log('setTimeout to zero seconds ran')
     }, [now])
     
 
