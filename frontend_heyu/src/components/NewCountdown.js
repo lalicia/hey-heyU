@@ -101,6 +101,7 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
     function updateNow() {
         let update = date.getTime();
         setNow(update);
+        console.log('now updated');
     }
 
     // useEffect for making timer disappear and resizing img
@@ -127,6 +128,10 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
 
     return (
         <div className="countdown-container">
+            <p className={showTimer ? "active-msg-invisible" : "active-msg"}>
+                <i>Just leave this tab open and we'll do the rest</i>
+            </p>
+
             <div className={showTimer ? "countdown" : "countdown-invisible"}>
                 {timerMinutes}:{timerSeconds}
             </div>
