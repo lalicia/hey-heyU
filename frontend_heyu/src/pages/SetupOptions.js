@@ -55,22 +55,22 @@ function SetupOptions({image, title, subject}) {
                             <h3>In how long would you like us to nudge you?</h3>
                             {/* change VALUES to 0 for testing in browser */}
                             <label htmlFor="15">
-                                <input type="radio" id="15" name="time" value="1" onChange={timeSelection}/>
+                                <input type="radio" id="15" name="time" value="15" onChange={timeSelection}/>
                                 15minutes
                             </label>
                             
                             <label htmlFor="30">
-                                <input type="radio" id="30" name="time" value="2" onChange={timeSelection}/>
+                                <input type="radio" id="30" name="time" value="30" onChange={timeSelection}/>
                                 30minutes  
                             </label>
                             
                             <label htmlFor="45">
-                                <input type="radio" id="45" name="time" value="3" onChange={timeSelection}/>
+                                <input type="radio" id="45" name="time" value="45" onChange={timeSelection}/>
                                 45minutes
                             </label>
                             
                             <label htmlFor="60">
-                                <input type="radio" id="60" name="time" value="4" onChange={timeSelection}/>
+                                <input type="radio" id="60" name="time" value="60" onChange={timeSelection}/>
                                 60minutes   
                             </label>
                         </form>
