@@ -16,6 +16,7 @@
 */
 html, body {
   height: 100%;
+  background-color: #0D0630;
 }
 /*
   Typographic tweaks!
@@ -84,14 +85,17 @@ code {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  gap: 6rem;
-  background-color: #fffcf7;
+  gap: 2rem;
+  background-color: #0D0630;
 }
 
 section {
   display: flex;
   flex-direction: column;
+  /* flex-wrap: nowrap; */
   width: 40%;
+  /* background-color: red; */
+  margin-right: 2rem;
 }
 
 h1 {
@@ -100,6 +104,9 @@ h1 {
   /* width: 40%; */
   margin: 1rem;
   text-align: center;
+  color:#FFFBBD;
+  text-shadow: 2px 2px 3px #7c7c7c;
+  word-break: keep-all;
 }
 
 h3 {
@@ -107,39 +114,57 @@ h3 {
   font-family: virgil;
   font-size: 1.5rem;
   text-align: center;
+  color:#FFFBBD;
 }
 
-.home-img {
+/* .home-img {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background-color: #0d5c63;
-}
+  background-color: #FFFBBD;
+} */
 
 select {
   margin: 2rem;
   padding: .3rem;
   font-size: 1.2rem;
-  background-color: lightgray;
+  font-family: virgil;
+  background-color: #1C1C1C;
+  color: #9c9c9c;
+  border-color: #FFFBBD;
+  border-width: 3px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 3px #FFFBBD;
 }
 
-.def-option {
-  font-family: sans-serif; 
+select:focus {
+  outline: none;
+  /* border-radius: 10px 10px 0 0; */
 }
+
+/* .def-option {
+  font-family: virgil;
+} */
 
 .option {
   font-family: virgil;
+  color:#FFFBBD;
 }
 
+/*This did work but flex was making the div stretch when the dropdown clicked. If can fix that, this works along with the styles in the Home that are commented out 
+  option:hover, option:checked {
+  background-color:#261d54;
+  outline: none;
+} */
 /*************************************end of Home styles*/
 
-/*************************************ExhibitModal.js css*/
+/*************************************Modal styles*/
 .modalbg {
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: #150025;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -147,38 +172,352 @@ select {
   z-index: 1; /*set z-indexs as back button was showing over modal background*/
 }
 
+/* .modal-container {
+  position: relative;
+  background-color: green;
+} */
+
 .modal-xbtn {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 0 .25rem 0;
+  /* display: flex;
+  justify-content: flex-end; */
+  /* background-color: red; */
+  /* width: fit-content; */
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
   z-index: 1;
+  font-family: virgil;
 }
 
 .modal-xbtn button {
-  background-color: transparent;
+  background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 3rem;
   cursor: pointer;
-  color: yellow;
-  text-shadow: 1px 1px 1px rgb(52, 180, 180), 0 0 25px orange, 0 0 5px orangered;
+  color: #9c9c9c;
+  text-shadow: 1px 1px 1px #FFFBBD, 0 0 25px #FFFBBD, 0 0 5px #1C1C1C;
   z-index: 1;
 }
 
-.modal-msg-text,
+.modal-msg {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.modal-msg-text {
+  color: #FFFBBD;
+  font-family: virgil;
+  margin: 1rem;
+}
+
 .modal-disclaimer-text {
-  color: white;
+  color: #9c9c9c;
+  font-family: virgil;
+  margin: 1rem;
 }
 
-.modal-msg button {
+.modal-msg-text button {
   background-color: transparent;
   border: none;
-  font-size: 1.5rem;
+  font-family: virgil;
+  font-size: 2rem;
+  font-weight: 900;
   cursor: pointer;
-  color: yellow;
-  text-shadow: 1px 1px 1px rgb(52, 180, 180), 0 0 25px orange, 0 0 5px orangered;
+  text-shadow: 0px 1px 10px #FFFBBD, 0 0 5px #FFFBBD, 1px 1px 5px #9c9c9c;
   z-index: 1;
+  /* background-color: red; */
+}
+
+.modal-msg-text button:hover {
+  color: #FFFBBD;
+  text-shadow: 0px 1px 10px #1C1C1C, 0 0 5px #FFFBBD, 1px 1px 5px #1C1C1C;
+}
+
+.modal-xbtn button:hover {
+  color: #1C1C1C;
+  text-shadow: 0px 1px 10px #FFFBBD, 0 0 5px #FFFBBD, 1px 1px 5px #9c9c9c;
+}
+
+.modal-done-btn {
+  margin: 2rem;
+  font-size: 2rem;
+  width: fit-content;
+  background-color:#FFFBBD;
+  color:#150025;
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  /* margin: 0 auto;
+  margin-top: 2rem; */
+  font-family: virgil;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 3px #9c9c9c;
+  border: 2px solid #150025;
+}
+
+.modal-done-btn:hover {
+  background-color:#150025;
+  color:#FFFBBD;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
+}
+
+.modal-done-btn:active {
+  background-color:#FFFBBD;
+  color:#150025;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
+}
+
+.modal-disclaimer {
+  display: flex;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+  font-size: 1.3rem;
 }
 
 /**************************************end of Modal styles*/
 
-/*************************************Break styles*/
+/**************************************SetupOptions styles*/
+
+.options-back-btn-container {
+  position: relative;
+}
+
+.back-home {
+  font-family: virgil;
+  font-size: 2rem;
+  color: #9c9c9c;
+  /* background-color: red; */
+  width:fit-content;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: #1C1C1C;
+  text-shadow: 0px 1px 10px #FFFBBD, 0 0 5px #FFFBBD, 1px 1px 5px #9c9c9c;
+  margin-bottom: 2rem;
+}
+
+.back-home:hover {
+  color: #FFFBBD;
+  text-shadow: 0px 1px 10px #1C1C1C, 0 0 5px #FFFBBD, 1px 1px 5px #1C1C1C;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.options-pg-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  /* background-color: green; */
+  gap: 0;
+}
+
+.options-pg-content {
+  /* background-color: red; */
+  margin-left: 2rem;
+  margin-top: 8rem;
+}
+
+.time-options {
+  display: flex;
+  flex-direction: column;
+  font-family: virgil;
+  color: #9c9c9c;
+  font-size: 1.3rem;
+  text-align: center;
+  align-items: center;
+  /* background-color: green; */
+}
+
+label {
+  margin-top: 1.5rem;
+  width:fit-content;
+}
+
+input {
+  margin-right: .4rem;
+  /* background-color: red; */
+}
+
+.to-countdown-btn {
+  background-color:#FFFBBD;
+  color:#0D0630;
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 2rem;
+  font-family: virgil;
+  font-size: 1.5rem;
+  /* border:#0D0630; */
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 3px #9c9c9c;
+  border: 2px solid #0D0630;
+  margin-bottom: 2rem;
+}
+
+.to-countdown-btn:hover {
+  background-color:#0D0630;
+  color:#FFFBBD;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
+}
+
+.to-countdown-btn:active {
+  background-color:#FFFBBD;
+  color:#0D0630;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
+}
+
+input[type="radio"] {
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  /* display: inline-block; */
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  /* background-color only for content */
+  /* background-clip: content-box; */
+  border: 3px solid #9c9c9c;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+}
+
+/* appearance for checked radiobutton */
+input[type="radio"]:checked {
+  background-color: #1C1C1C;
+}
+
+.option-img {
+  margin-top: 8%;
+  margin-right: 2rem;
+  max-width: 40%;
+  /* background-color: red; */
+}
+
+.option-title {
+  /* background-color: red; */
+  display: flex;
+  margin: 0 auto;
+  margin-top: 5rem;
+  width: 90%;
+  justify-content: center;
+}
+
+/********************************end of SetupOptions styles*/
+
+/********************************NewCountdown styles*/
+/*CRITICAL to stop that annoying margin makes the page go longer thing*/
+.options-pg {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.countdown-img {
+  margin-top: 1rem;
+  align-self: center;
+  /* max-width: 10%; */
+  /* transition: ease-in-out 3s; */
+}
+
+.countdown-img-bigger {
+  margin-top: 1rem;
+  align-self: center;
+  /* max-width: 15%; */
+  /* transition: ease-in-out 3s; */
+}
+
+.cdown-actual-img {
+  height: 16rem;
+  margin-bottom: -1rem;
+  transition: ease-in-out 3s;
+}
+
+.cdown-actual-img-bigger {
+  height: 21rem;
+  transition: ease-in-out 3s;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  /* color: #1C1C1C;
+  text-shadow: 0px 1px 5px #FFFBBD, 1px 1px 5px #FFFBBD, 1px 1px 15px #9c9c9c; */
+  color: #FFFBBD;
+  text-shadow: 5px 5px 5px #1C1C1C, 0 0 10px #9c9c9c, 1px 1px 5px #1c1c1c;
+  font-family: virgil;
+  font-weight: 900;
+  font-size: 4rem;
+  transition: ease-out 3s;
+}
+
+.countdown-invisible {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #0D0630;
+  text-shadow: 5px 5px 5px #0D0630, 0 0 10px #0D0630, 1px 1px 5px #0D0630;
+  font-family: virgil;
+  font-weight: 900;
+  font-size: 2rem;
+  transition: ease-in 3s;
+}
+
+.go-again-btns {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.countdown-btns {
+  background-color:#FFFBBD;
+  color:#0D0630;
+  padding: .5rem 1.5rem .5rem 1.5rem;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: -2rem;
+  font-family: virgil;
+  font-size: 1.5rem;
+  /* border:#0D0630; */
+  border: 2px solid #0D0630;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 3px #9c9c9c;
+  margin-bottom: 2rem;
+}
+  
+.countdown-btns:hover {
+  background-color:#0D0630;
+  color:#FFFBBD;
+  box-shadow: 0px 0px 5px 10px #9c9c9c;
+  /* border: 2px solid #FFFBBD; */
+}
+
+/********************************end of NewCountdown styles*/
+
+@media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}

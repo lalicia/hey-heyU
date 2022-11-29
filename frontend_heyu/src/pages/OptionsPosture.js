@@ -4,14 +4,14 @@ import React from "react";
 import SetupOptions from "./SetupOptions.js";
 
 //import images HERE to hand as props
-import posture from "../assets/posture.png";
+import posturelight from "../assets/posturelight.png";
 
 function OptionsPosture() {
 
 
 
     return (
-        <SetupOptions image={posture} title={"Posture Nudges"} subject={"check your posture"}/>
+        <SetupOptions image={posturelight} title={"Posture Nudges"} subject={"check your posture"}/>
     )
 }
 

@@ -18,6 +18,9 @@ function SetupOptions({image, title, subject}) {
     //state to control whether Options or Countdown are shown
     const [start, setStart] = useState(false);
 
+    //state to control size of image (operational when countdown is running)
+    const [imgBig, setImgBig] = useState(false);
+
     //to switch state so display goes from options to countdown timer
     function onClick() {
         setStart(true);
@@ -37,35 +40,38 @@ function SetupOptions({image, title, subject}) {
 
             {start === false ? 
             (<>
-                <h2 className="back-home">
-                    <Link to="/">hey-heyU</Link>
-                </h2>
+                <div className="options-back-btn-container">
+                    <h2 className="back-home">
+                        <Link to="/">hey-heyU</Link>
+                    </h2>
+                </div>
+                
 
-                <div className="options-pg-contents">
-                    <section>
+                <div className="options-pg-container">
+                    <section className="options-pg-content">
                         <h1>{title}</h1>
                         
                         <form className="time-options">
                             <h3>In how long would you like us to nudge you?</h3>
                             {/* change VALUES to 0 for testing in browser */}
                             <label htmlFor="15">
-                                <input type="radio" id="15" name="time" value="1" onChange={timeSelection}/>
-                                15 minutes
+                                <input type="radio" id="15" name="time" value="15" onChange={timeSelection}/>
+                                15minutes
                             </label>
                             
                             <label htmlFor="30">
-                                <input type="radio" id="30" name="time" value="2" onChange={timeSelection}/>
-                                30 minutes  
+                                <input type="radio" id="30" name="time" value="30" onChange={timeSelection}/>
+                                30minutes  
                             </label>
                             
                             <label htmlFor="45">
-                                <input type="radio" id="45" name="time" value="3" onChange={timeSelection}/>
-                                45 minutes
+                                <input type="radio" id="45" name="time" value="45" onChange={timeSelection}/>
+                                45minutes
                             </label>
                             
                             <label htmlFor="60">
-                                <input type="radio" id="60" name="time" value="4" onChange={timeSelection}/>
-                                60 minutes   
+                                <input type="radio" id="60" name="time" value="60" onChange={timeSelection}/>
+                                60minutes   
                             </label>
                         </form>
 
@@ -82,7 +88,7 @@ function SetupOptions({image, title, subject}) {
                 </div>
                 </>)
                 :
-                (<>
+                (<div className="countdown-pg-container">
                     <h2 className="back-home">
                         <Link to="/">hey-heyU</Link>
                     </h2>
@@ -91,16 +97,22 @@ function SetupOptions({image, title, subject}) {
                         <h1>When we nudge you, {subject}</h1>
                     </div>
 
-                    <div className="option-img">
-                        <img src={image} alt="icon for nudge type"></img>
-                    </div>
+                    <div className="countdown-container">
+                        {/*added toggle for class to allow img resize*/}
+                        <div className="countdown-img"
+                        // {imgBig ? "countdown-img-bigger" : "countdown-img"}
+                        >
+                            <img className={imgBig ? "cdown-actual-img-bigger" : "cdown-actual-img"} src={image} alt="icon for nudge type"></img>
+                        </div>
 
-                    <div className="option-countdown-display">
-                        {/* COMMENTED OUT TO WORK ON NEW VERSION, BUT THIS IS THE WORKING CODE - now permanently replaced but was initial working version <Countdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/> */}
-                        <NewCountdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/>
+                        <div className="option-countdown-display">
+                            {/* COMMENTED OUT TO WORK ON NEW VERSION, BUT THIS IS THE WORKING CODE - now permanently replaced but was initial working version <Countdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins}/> */}
+                            <NewCountdown minutes={minutes} setMinutes={setMinutes} resetMins={resetMins} imgBig={imgBig} setImgBig={setImgBig}/>
+                        </div>
                     </div>
+                    
 
-                </>)}    
+                </div>)}    
         </div>
     )
 }

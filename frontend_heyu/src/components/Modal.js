@@ -31,19 +31,22 @@ function Modal({setModal}) {
 
     return (
         <div className="modalbg">
-        <div className="modal-container">
-            <div className="modal-xbtn">
-                <button onClick={() => setModal(false)}>x</button>
+
+            <div className="modal-x-box">
+                <div className="modal-xbtn">
+                    <button onClick={() => setModal(false)}>x</button>
+                </div>
             </div>
-        
+
+        <div className="modal-container">
             <div className="modal-msg">
-                <h3 className="modal-msg-text">In order fo us to nudge you, we need permission to send notifications - please click <button onClick={permission}>here</button> to set the permissions</h3>
-                <button onClick={() => setModal(false)}>Done, back to the nudges</button>
+                <h3 className="modal-msg-text">In order for us to nudge you we need to send notifications - please click <button onClick={permission}>here</button> to set permissions</h3>
+                <button className="modal-done-btn" onClick={() => setModal(false)}>Done, back to the nudges</button>
             </div>
           
             <div className="modal-disclaimer">
                 <p className="modal-disclaimer-text">
-                    <i>Please note that if your browser is set to block notifications, we may not have been able to ask permission. If you didn't get a request, you can update the setting manually in your browser.
+                    <i>Please note - if your browser is set to block notifications, we may not have been able to ask permission.<br></br>If you didn't get a request (or a message that notifications are already allowed), you can update the setting manually in your browser.
                     <br>
                     </br>
                     You can usually access this by right-clicking the icon in the address bar, directly preceeding the website address.
