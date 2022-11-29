@@ -458,7 +458,7 @@ input[type="radio"]:checked {
 .countdown {
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  margin-bottom: 1rem;
   /* color: #1C1C1C;
   text-shadow: 0px 1px 5px #FFFBBD, 1px 1px 5px #FFFBBD, 1px 1px 15px #9c9c9c; */
   color: #FFFBBD;
@@ -466,19 +466,19 @@ input[type="radio"]:checked {
   font-family: virgil;
   font-weight: 900;
   font-size: 4rem;
-  transition: ease-in-out 3s;
+  transition: ease-out 3s;
 }
 
 .countdown-invisible {
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  margin-bottom: 1rem;
   color: #0D0630;
   text-shadow: 5px 5px 5px #0D0630, 0 0 10px #0D0630, 1px 1px 5px #0D0630;
   font-family: virgil;
   font-weight: 900;
   font-size: 2rem;
-  transition: ease-in-out 3s;
+  transition: ease-in 3s;
 }
 
 .go-again-btns {
