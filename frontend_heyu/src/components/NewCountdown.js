@@ -23,14 +23,24 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         let interval = setInterval(() => {
             //DON'T EVER REMOVE THIS CLEARINTERVAL
             clearInterval(interval);
-            if (seconds === 0 && minutes !== 0) {
+
+            //this worked as if/else so leaving in place
+            if ((minutes === 0 && seconds === 52) || 
+                (minutes === 29 && seconds === 52) || 
+                (minutes === 44 && seconds === 52) || 
+                (minutes === 59 && seconds === 52)) {
+                    clearInterval(interval);
+                    console.log('the 10 second ci ran')
+                }
+
+            else if (seconds === 0 && minutes !== 0) {
                 //to handle going down in minutes and restarting seconds
                 setSeconds(59);
                 setMinutes(minutes - 1);
             } 
             else if (seconds === 0 && minutes === 0) {
                     clearInterval(interval);
-                    console.log('this ci ran')
+                    console.log('the mins/secs = 0 ci ran')
                     // setButton(true);
                     // console.log('this setButton ran')
                     // setShowTimer(true);
@@ -64,6 +74,7 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
             // setSeconds(0);
             setButton(true);
             setShowTimer(true);
+            setImgBig(false);
             console.log('timeout ran');
         }
 
@@ -84,6 +95,7 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
         setSeconds(59);
         setButton(false);
         setShowTimer(false);
+        setImgBig(true);
     }
 
     function updateNow() {
@@ -93,18 +105,18 @@ function NewCountdown({minutes, setMinutes, resetMins, imgBig, setImgBig}) {
 
     // useEffect for making timer disappear and resizing img
     useEffect(() => {
-        setTimeout(() => setShowTimer(false), 3000);
-    //     setTimeout(() => setImgBig(true), 3000);
+        setTimeout(() => setShowTimer(false), 2000);
+        setTimeout(() => setImgBig(true), 2000);
         console.log('setTimeout to disappear timer ran')
     }, [])
 
     useEffect(() => {
-        setTimeout(() => setMinutes(0), 10000);
+        setTimeout(() => setMinutes(0), 12000);
         console.log('setTimeout to zero minutes ran')
     }, [now])
     
     useEffect(() => {
-        setTimeout(() => setSeconds(0), 10000);
+        setTimeout(() => setSeconds(0), 12000);
         console.log('setTimeout to zero seconds ran')
     }, [now])
     
