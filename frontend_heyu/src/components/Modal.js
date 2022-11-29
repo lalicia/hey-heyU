@@ -48,11 +48,8 @@ function Modal({setModal}) {
                 <button className="modal-done-btn" onClick={() => setModal(false)}>Done, back to the nudges</button>
             </div>
           
-            <div className="modal-disclaimer">
-                <p className="modal-disclaimer-text">
-                    <i><button className="modal-to-babymodal-btn" onClick={() => setBabyModal(true)}>Er - nothing happened?</button></i>
-                </p>
-            </div>
+            <i><button className="modal-to-babymodal-btn" onClick={() => setBabyModal(true)}>Er - nothing happened?</button></i>
+            
         </div>
     </div>
     )
