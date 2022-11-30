@@ -16,12 +16,12 @@ hey-heyu is a React app designed for users who work from home and/or spend a lot
 
 The app was planned and designed using Excalidraw and Figma/Figjam, where I created wireframes and mapped out the idea and user journey.
 
-<img src="./readme_images/lowfi_wireframes.JPG" alt="low-fi wireframes" width="750px">
+<img src="./readme_images/lowfi_wireframes.JPG" alt="low-fi wireframes" width="500px">
 <img src="./readme_images/highfi_wireframes.JPG" alt="hi-fi wireframes" width="750px">
-<img src="./readme_images/brainstorming.JPG" alt="figma planning - concept" width="750px">
-<img src="./readme_images/component_tree_user_journey.JPG" alt="figma planning - user journey" width="750px">
+<img src="./readme_images/brainstorming.JPG" alt="figma planning - concept" width="500px">
+<img src="./readme_images/component_tree_user_journey.JPG" alt="figma planning - user journey" width="500px">
 
-Initially Brycen and I created a Trello board for project management, but as this turned into a solo project I didn't require this. It did, however, give good structure to starting out with the project, and has we worked together it would have had clear benefits as it allowed for us to add and track things asynchronously.
+Initially Brycen and I created a Trello board for project management, but as it turned into a solo project I didn't require this. It did, however, give good structure to starting out with the project, and had we been able to work together it would have had clear benefits as it allowed us to add and track things asynchronously.
 
 ## The Build
 
