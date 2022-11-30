@@ -25,7 +25,7 @@ Initially Brycen and I created a Trello board for project management, but as it 
 
 ## The Build
 
-The MVP for the app was to build a desktop version of the app, foussing on being able to notify a user on a desktop browser. I investigated methods of doing this as I had no prior knowledge and wasn't sure whether or not a library would be required, but during my research I discovered the [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API).
+The MVP for the app was to be able to notify a user on a desktop browser. I investigated methods of doing this as I had no prior knowledge and wasn't sure whether or not a library would be required, but during my research I discovered the [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API).
 
 I discovered a lot of things during to build process that I hadn't been previously aware of - from the initial stumbling block of how to navigate from a select option in a dropdown (because <a> tags can't be used, which also rendered React Link unusable), to the more problematic issue of setInterval being throttled in an inactive tab.
 
