@@ -27,7 +27,7 @@ Initially Brycen and I created a Trello board for project management, but as it 
 
 The MVP for the app was to be able to notify a user on a desktop browser. I investigated methods of doing this as I had no prior knowledge and wasn't sure whether or not a library would be required, but during my research I discovered the [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API).
 
-I discovered a lot of things during to build process that I hadn't been previously aware of - from the initial stumbling block of how to navigate from a select option in a dropdown (because <a> tags can't be used, which also rendered React Link unusable), to the more problematic issue of setInterval being throttled in an inactive tab.
+I discovered a lot of things during to build process that I hadn't been previously aware of - from the initial stumbling block of how to navigate from a select option in a dropdown (because anchor tags can't be used, which also rendered React Link unusable), to the more problematic issue of setInterval being throttled in an inactive tab.
 
 The app is meant to be a quick thing to use, and in effect a set-and-forget, so being able to provide timely notifications when the user was focussed elsewhere was essential.
 
@@ -47,4 +47,4 @@ React, React Router, JavaScript, HTML, CSS, Notifications API, Netlify
 
 I'm currently awaiting some user feedback, having just deployed the app.
 
-For future iterations, I'd like to look at moile notifications and making this functional on mobile - though I would be interested if users think this would be useful or not, given it's designed for people working on a computer. I also plan on adding a light mode.
+For future iterations, I'd like to look at mobile notifications and making this functional on mobile - though I would be interested if users think this would be useful or not, given it's designed for people working on a computer. I also plan on adding a light mode.
